@@ -20,6 +20,16 @@ class employee:
     def set_name(self,value):
         self.__name=value
 
+    # Static Method
+    @staticmethod
+    def get_id():
+        return employee.__user_id
+    
+    @staticmethod
+    def set_id(val):
+        employee.__user_id=val
+
+
 # Create an object/instance of class
 sam = employee()
 
@@ -46,14 +56,23 @@ print('Method 2',sam.get_name())  # Getter Method
 
 # Update private attribute
 sam.set_name("Anil")    # Setter Method
-print(print('Updated name',sam.get_name()) )
+print('Updated name',sam.get_name()) 
 
 
 ### Static Method
+print('\n')
+print('Static Method')
 
+print('Sam id',sam.id)
 
-# print(sam.id)
+James = employee()
 
-# James = employee()
+print('James id',James.id)
 
-# print(James.id)
+# Using static method directly from class
+employee.set_id(10)
+
+Jack =employee()
+
+print('Jack id',Jack.id)
+
